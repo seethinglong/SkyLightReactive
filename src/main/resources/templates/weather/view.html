@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LightSky VIEW</title>
+</head>
+<body>
+<div class="container">
+    <h2>Weather</h2>
+    <form method="post" action="#" th:object="${location}" th:action="@{/location}">
+        <h3>Location TimeZone</h3>
+        <input type="text" placeholder="timezone" id="timezone" th:field="*{timezone}"/>
+        <input type="submit" value="Submit"/>
+    </form>
+    <br />
+    <table>
+        <tr>
+            <th>summary</th>
+            <th>icon</th>
+            <th>temperature</th>
+            <th>time</th>
+        </tr>
+        <th:block th:each="w : ${weather}">
+            <tr>
+                <td th:text="${w.summary}">summary</td>
+                <td th:text="${w.icon}">icon</td>
+                <td th:text="${w.temperature}">temperature</td>
+                <td th:text="${w.time}">time</td>
+            </tr>
+        </th:block>
+    </table>
+</div>
+</body>
+</html>

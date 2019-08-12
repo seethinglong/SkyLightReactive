@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LightSky GET</title>
+</head>
+<body>
+<div class="container">
+    <h2>Weather</h2>
+    <br />
+    <table>
+        <tr>
+            <th>summary</th>
+            <th>icon</th>
+            <th>temperature</th>
+            <th>time</th>
+        </tr>
+        <th:block th:each="w : ${weather}">
+            <tr>
+                <td th:text="${w.summary}">summary</td>
+                <td th:text="${w.icon}">icon</td>
+                <td th:text="${w.temperature}">temperature</td>
+                <td th:text="${w.time}">time</td>
+            </tr>
+        </th:block>
+    </table>
+    <p>Darksky<a href="http://www.google.com">Google</a></p>
+</div>
+</body>
+</html>
